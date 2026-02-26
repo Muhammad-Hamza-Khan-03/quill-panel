@@ -12,6 +12,7 @@ import {
     Diamond,
     LogOut
 } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
 
 export type AdminSection = 'dashboard' | 'inventory' | 'categories' | 'scraper' | 'media';
 
@@ -26,6 +27,7 @@ interface MenuItem {
 export default function AdminSidebar() {
     const pathname = usePathname();
     const router = useRouter();
+    const { logout } = useAuth();
 
     const menuItems: MenuItem[] = [
         { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, group: 'Home', href: '/admin' },
@@ -43,8 +45,7 @@ export default function AdminSidebar() {
     };
 
     const handleLogout = () => {
-        // In a real app, clear tokens here
-        router.push('/');
+        logout();
     };
 
     return (

@@ -6,14 +6,30 @@ import { motion } from 'framer-motion';
 import { Diamond } from 'lucide-react';
 import { CustomCursor, AtmosphericBackground } from '@/components/Effects';
 import { Toaster, toast } from 'react-hot-toast';
+import { useAuth } from '@/context/AuthContext';
 
 export default function LoginPage() {
   const [accessKey, setAccessKey] = useState('');
   const router = useRouter();
+  const { login, isAuthenticated } = useAuth();
 
-  const handleAuthenticate = () => {
-    // In a real app, verify the key
-    if (accessKey === 'admin123' || accessKey === '') {
+  React.useEffect(() => {
+    if (isAuthenticated) {
+      router.push('/admin');
+    }
+  }, [isAuthenticated, router]);
+
+  const handleAuthenticate = async () => {
+    if (!accessKey) {
+      toast.error('Please enter an access key', {
+        style: { background: '#0a0a0a', color: '#fff', border: '1px solid rgba(255,255,255,0.1)' },
+      });
+      return;
+    }
+
+    const success = await login(accessKey);
+    
+    if (success) {
       toast.success('Authentication successful', {
         style: { background: '#0a0a0a', color: '#fff', border: '1px solid rgba(255,255,255,0.1)' },
       });
@@ -72,7 +88,6 @@ export default function LoginPage() {
         </div>
       </motion.div>
 
-      {/* Background brand mark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] -z-0 pointer-events-none">
         <Diamond className="w-[600px] h-[600px] text-white" />
       </div>
