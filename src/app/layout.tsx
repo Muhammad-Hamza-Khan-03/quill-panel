@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Admin Portal | Pashmina Luxury",
+  title: "Admin Portal | Quill",
   description: "Boutique management and inventory control",
 };
 

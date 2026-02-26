@@ -325,7 +325,7 @@ export default function EditProductPage() {
                             {previews.map((url, index) => (
                                 <div key={index} className="flex flex-col gap-2">
                                     <div className="aspect-[3/4] rounded-2xl overflow-hidden relative group border border-luxury-border">
-                                        <Image src={url} className="w-full h-full object-cover" alt="" />
+                                        <Image src={url} fill sizes="(max-width: 768px) 100vw, 50vw" className="w-full h-full object-cover" alt="" />
                                         <button
                                             type="button"
                                             onClick={() => removeImage(index)}

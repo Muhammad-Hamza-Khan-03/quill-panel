@@ -56,7 +56,7 @@ export default function NotFound() {
 
             {/* Background Micro-details */}
             <div className="absolute bottom-20 left-10 opacity-10 hidden lg:block">
-                <span className="text-[10px] uppercase tracking-[0.5em] text-white [writing-mode:vertical-rl] rotate-180">Pashmina Luxury Heritage</span>
+                <span className="text-[10px] uppercase tracking-[0.5em] text-white [writing-mode:vertical-rl] rotate-180">Quill Heritage</span>
             </div>
             <div className="absolute top-40 right-10 opacity-10 hidden lg:block">
                 <span className="text-[10px] uppercase tracking-[0.5em] text-white [writing-mode:vertical-rl]">Excellence in every thread</span>

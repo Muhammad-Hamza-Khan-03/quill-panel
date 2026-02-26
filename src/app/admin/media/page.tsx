@@ -70,7 +70,7 @@ export default function MediaLibraryPage() {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
                     <h1 className="text-4xl font-serif mb-2 text-luxury-text">Media Vault</h1>
-                    <p className="text-luxury-muted text-sm">Visual assets for the Pashmina Luxury brand.</p>
+                    <p className="text-luxury-muted text-sm">Visual assets for the Quill brand.</p>
                 </div>
                 <div className="flex items-center gap-3">
                     <label className="luxury-button flex items-center gap-2 cursor-pointer shadow-lg shadow-luxury-blue/20">

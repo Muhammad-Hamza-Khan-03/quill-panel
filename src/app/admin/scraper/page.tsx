@@ -142,7 +142,7 @@ export default function ScraperCenterPage() {
                                                         src={p.variations?.[0]?.image_url || 'https://placehold.co/400x600/04070B/E2E8F0?text=Scraped'}
                                                         alt={p.name}
                                                         fill
-                                                        unoptimized
+                                                        sizes="(max-width: 768px) 100vw, 50vw"
                                                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all"
                                                     />
                                                 </div>
@@ -215,11 +215,10 @@ export default function ScraperCenterPage() {
                                     <button
                                         key={i + 1}
                                         onClick={() => setPage(i + 1)}
-                                        className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
-                                            currentPage === i + 1
+                                        className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${currentPage === i + 1
                                                 ? 'bg-luxury-blue text-white'
                                                 : 'text-luxury-muted hover:bg-luxury-text/5'
-                                        }`}
+                                            }`}
                                     >
                                         {i + 1}
                                     </button>
